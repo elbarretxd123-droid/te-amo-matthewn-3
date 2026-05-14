@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>Feliz Cumpleaños · Eiden ❤️</title>
+  <style>
+    /* ----- RESET & VARIABLES (ROMÁNTICO · PASTEL) ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --rosa-suave: #f9e6ec;
+      --rosa-medio: #f4c2cd;
+      --beige: #fdf6f0;
+      --blanco: #ffffff;
+      --dorado-suave: #e6c9a8;
+      --texto-oscuro: #3e2c2f;
+      --texto-claro: #7a5b61;
+      --sombra-suave: 0 12px 28px rgba(0, 0, 0, 0.05), 0 4px 10px rgba(0, 0, 0, 0.03);
+      --borde-redondo: 28px;
+      --borde-boton: 60px;
+      --transicion: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    body {
+      font-family: 'Segoe UI', 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--beige);
+      color: var(--texto-oscuro);
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    h1, h2, h3 {
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1.2rem;
+      color: #56363c;
+      border-left: 6px solid var(--rosa-medio);
+      padding-left: 1.2rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 1.8rem;
+    }
+
+    section {
+      scroll-margin-top: 30px;
+      padding: 2.5rem 0;
+      animation: fadeInUp 0.7s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(18px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(145deg, rgba(255, 235, 240, 0.55) 0%, rgba(255, 245, 235, 0.7) 100%), 
+                  url('https://i.pinimg.com/736x/b5/a4/99/b5a499afe589b6a1f8080cbabf1e4f8a.jpg');
+      background-size: cover;
+      background-position: center 30%;
+      background-repeat: no-repeat;
+      position: relative;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+      box-shadow: var(--sombra-suave);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 240, 240, 0.2);
+      backdrop-filter: blur(1.5px);
+      border-radius: inherit;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 750px;
+      padding: 2rem;
+      background: rgba(255, 250, 245, 0.5);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: 48px;
+      box-shadow: 0 20px 40px rgba(190, 120, 130, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      margin: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 10vw, 5rem);
+      font-weight: 500;
+      color: #6a3e48;
+      text-shadow: 2px 2px 12px rgba(255, 220, 220, 0.8);
+      margin-bottom: 0.8rem;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      color: #5a3f45;
+      margin-bottom: 2.5rem;
+      font-style: italic;
+    }
+
+    .btn-hero {
+      background: var(--rosa-medio);
+      color: #2d1f22;
+      border: none;
+      padding: 1rem 2.8rem;
+      font-size: 1.5rem;
+      border-radius: var(--borde-boton);
+      box-shadow: 0 6px 14px rgba(220, 140, 150, 0.25);
+      cursor: pointer;
+      font-weight: 500;
+      transition: var(--transicion);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(4px);
+    }
+
+    .btn-hero:hover {
+      background: #e7aeb9;
+      transform: scale(1.02) translateY(-3px);
+      box-shadow: 0 16px 28px rgba(200, 120, 140, 0.25);
+    }
+
+    .menu-botones {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.8rem;
+      margin: 2.2rem 0 1rem;
+    }
+
+    .btn-menu {
+      background: var(--blanco);
+      padding: 1.2rem 2.2rem;
+      min-width: 180px;
+      border-radius: var(--borde-redondo);
+      box-shadow: var(--sombra-suave);
+      font-size: 1.5rem;
+      font-weight: 450;
+      color: var(--texto-oscuro);
+      border: 1px solid #fde1e7;
+      cursor: pointer;
+      transition: var(--transicion);
+      backdrop-filter: blur(4px);
+      background: rgba(255, 252, 250, 0.8);
+      border: 1px solid #ffe2e2;
+      text-align: center;
+      flex: 0 1 auto;
+    }
+
+    .btn-menu:hover {
+      background: #fbe4e9;
+      transform: translateY(-5px);
+      box-shadow: 0 22px 30px -8px rgba(210, 140, 150, 0.2);
+      border-color: var(--rosa-medio);
+    }
+
+    .regalos-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 2.5rem 0 0.5rem;
+    }
+
+    .btn-regalo {
+      background: linear-gradient(145deg, #fff5f5, #fde6ea);
+      padding: 1.1rem 2.5rem;
+      min-width: 170px;
+      border-radius: 50px;
+      box-shadow: 0 10px 20px rgba(200, 120, 140, 0.15);
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: #632c3c;
+      border: 2px solid #ffcfd8;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      backdrop-filter: blur(4px);
+      letter-spacing: 0.3px;
+    }
+
+    .btn-regalo:hover {
+      background: #fbc1cf;
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 20px 28px rgba(200, 100, 130, 0.25);
+      border-color: #e09eae;
+      color: #2f1a1f;
+    }
+
+    .btn-regalo i {
+      margin-right: 8px;
+      font-style: normal;
+      font-size: 1.3rem;
+    }
+
+    .galeria-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .galeria-item {
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--sombra-suave);
+      cursor: pointer;
+      transition: var(--transicion);
+      background: #fff3f0;
+      aspect-ratio: 1 / 1;
+    }
+
+    .galeria-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s;
+    }
+
+    .galeria-item:hover {
+      transform: scale(1.01);
+      box-shadow: 0 20px 28px rgba(170, 120, 130, 0.15);
+    }
+
+    .galeria-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(40, 20, 25, 0.85);
+      backdrop-filter: blur(10px);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 1rem;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-content {
+      max-width: 90vw;
+      max-height: 85vh;
+      border-radius: 36px;
+      box-shadow: 0 30px 50px rgba(0,0,0,0.3);
+      border: 3px solid #ffe3e8;
+      background: #fceaea;
+      padding: 6px;
+    }
+
+    .lightbox-content img {
+      width: 100%;
+      height: auto;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 28px;
+      display: block;
+    }
+
+    .close-lightbox {
+      position: absolute;
+      top: 25px; right: 35px;
+      font-size: 3.5rem;
+      color: #fbe4e4;
+      cursor: pointer;
+      opacity: 0.9;
+      transition: 0.2s;
+      line-height: 1;
+      user-select: none;
+    }
+    .close-lightbox:hover { opacity: 1; transform: scale(1.1); color: #ffe0e0; }
+
+    .experiencia-texto {
+      background: rgba(255, 250, 245, 0.7);
+      backdrop-filter: blur(5px);
+      padding: 2.2rem 2.5rem;
+      border-radius: 40px;
+      box-shadow: var(--sombra-suave);
+      border: 1px solid #fcd9df;
+      font-size: 1.2rem;
+    }
+
+    .experiencia-texto p {
+      margin-bottom: 1.5rem;
+      color: #4d353b;
+    }
+
+    .seccion-especial {
+      text-align: center;
+      background: linear-gradient(135deg, #ffe9ef 0%, #fde2d7 100%);
+      border-radius: 48px;
+      padding: 2.5rem 2rem;
+      box-shadow: var(--sombra-suave);
+    }
+
+    .img-pareja {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid white;
+      box-shadow: 0 14px 28px rgba(180, 100, 120, 0.2);
+      margin-bottom: 1.2rem;
+    }
+
+    .texto-pareja {
+      font-size: 1.6rem;
+      color: #5c3942;
+      font-weight: 450;
+    }
+
+    @media (max-width: 640px) {
+      .container { padding: 1rem 1.2rem; }
+      h2 { font-size: 1.9rem; }
+      .btn-menu { font-size: 1.3rem; padding: 1rem 1.5rem; min-width: 140px; }
+      .hero h1 { font-size: 2.5rem; }
+      .hero p { font-size: 1.1rem; }
+      .experiencia-texto { padding: 1.5rem; }
+      .btn-regalo { font-size: 1.2rem; padding: 0.9rem 1.8rem; min-width: 140px; }
+    }
+
+    html {
+      scroll-padding-top: 30px;
+    }
+
+    .footer-note {
+      margin-top: 2rem;
+      text-align: center;
+      color: #9f7e84;
+      font-size: 1rem;
+    }
+
+    .btn-menu, .btn-hero, .btn-regalo { will-change: transform; }
+
+    /* Estilos para los botones de videos */
+    .btn-video-dedicatoria {
+      background: linear-gradient(135deg, #fff0f3, #fde2e8);
+      padding: 1rem 1.2rem;
+      border-radius: 40px;
+      box-shadow: 0 8px 16px rgba(200, 120, 140, 0.12);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #5e3640;
+      border: 2px solid #ffcfd8;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(4px);
+      text-align: center;
+    }
+
+    .btn-video-dedicatoria:hover {
+      background: #fbc1cf;
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 16px 24px rgba(200, 100, 130, 0.25);
+      border-color: #e09eae;
+      color: #2f1a1f;
+    }
+  </style>
+</head>
+<body>
+
+<!-- 1. PANTALLA INICIAL (HERO) -->
+<section class="hero" id="inicio">
+  <div class="hero-content">
+    <h1>Feliz Cumpleaños, mi Eiden ❤️</h1>
+    <p>Un dia tan especial y unico como tu mivida eidencita preciosaa. <br> Que este año esté lleno de amor, gatitos y nosotros juntitos acurrucaditos como gatitos bien lindos rawrrrrrr.</p>
+    <button class="btn-hero" id="btnEntrar">Entrar ✨</button>
+  </div>
+</section>
+
+<!-- CONTENIDO PRINCIPAL -->
+<main class="container">
+  
+  <!-- 2. SECCIÓN DE BOTONES (menú) -->
+  <div style="text-align: center; margin: 0.5rem 0 0.5rem;">
+    <div class="menu-botones">
+      <button class="btn-menu" data-target="galeria">🌸 Galeriamiau</button>
+      <button class="btn-menu" data-target="experiencias">📖 Experienciasrawrrr</button>
+      <button class="btn-menu" data-target="juegos">🎮 Juegitosrawrr</button>
+      <button class="btn-menu" data-target="gatitos">🐱 Ay mi Gatito miau miau</button>
+    </div>
+  </div>
+
+  <!-- 3. SECCIÓN GALERÍA -->
+  <section id="galeria">
+    <h2>✨ Galería de momentos</h2>
+    <div class="galeria-grid" id="galeriaGrid"></div>
+  </section>
+
+  <!-- 4. SECCIÓN EXPERIENCIAS -->
+  <section id="experiencias">
+    <h2>💌 Nuestra historia</h2>
+    <div class="experiencia-texto">
+      <p>Querido Eiden, cada instante a tu lado es un recuerdo que atesoro que de tu belleza me deslumbra y tu ternura perdura en mi calido corazon que deseo que lo nuestro dure para siempre porque yo se que sera asi para siempre rawrrr. Desde aquella primera conversacion que tuve contigo hasta las risas que te caracterizan me encantas, todo ha sido muy inolvidable para mi, myeiden.</p>
+      <p>Hoy celebro tu existencia, tu forma de ser, tu forma de ver el mundo, y el hecho de que yo pueda estar contigo para siempre miamorr. Gracias por hacer Que mis dias sea una aventura eterna tan linda y maravillosa que eres dia a dia para mi. Eres y seras mi luz y esperanza, espero que este cumpleaños te ame tan fuerte como tu lo haces conmigo y yo quiero dartelas cuando te haga mas que mio.</p>
+      <p>Recuerdo esa primera vez que te conoci, genuinamente fui muy timido en conocerte, pero quize esforzarme en conocerte porque pense que no habria sido una casualidad el haberte encontrado de tal modo, ni un "te quiero", ni un "te amo" puede compararse a lo que yo realmente siento por ti mi prometida eidencita, de igual manera quiero decirte que te amo y escuchar que me ames, y poder demostramelo con mi propio sentir el hecho de que dia a dia cumplas muchos mas años conmigo miamor, que fui afortunado de haber conocido a alguien tan carismatico y empatico como tu a la que presumo como mi esposita eiden. ❤️</p>
+    </div>
+  </section>
+
+  <!-- 5. SECCIÓN JUEGOS -->
+  <section id="juegos">
+    <h2>🎲 Momentos divertidos & juegos</h2>
+    <div class="galeria-grid" id="juegosGrid"></div>
+  </section>
+
+  <!-- 6. SECCIÓN GATITOS -->
+  <section id="gatitos">
+    <h2>🐾 Gatitos adorables</h2>
+    <div class="galeria-grid" id="gatitosGrid"></div>
+  </section>
+
+  <!-- 7. SECCIÓN ESPECIAL: PAREJA -->
+  <section id="especial" class="seccion-especial">
+    <img class="img-pareja" src="https://i.pinimg.com/736x/1a/cc/07/1acc0788054c7ce8ee5824224e723780.jpg" alt="Pareja">
+    <div class="texto-pareja">Con amor, de tu personita especial favorita, osea yo rawrrr❤️</div>
+    <p style="margin-top: 1rem; opacity: 0.8;">Siempre juntos, mivida Eidencita.</p>
+  </section>
+
+  <!-- 8. 🎁 SECCIÓN: BOTONES DE REGALO (3 videos) -->
+  <div style="text-align: center; margin-top: 1rem;">
+    <h2 style="border-left: none; text-align: center; border-bottom: 3px solid var(--rosa-medio); display: inline-block; padding-bottom: 0.4rem; padding-left: 0;">🎁 Regalos sorpresa</h2>
+    <div class="regalos-container">
+      <button class="btn-regalo" data-video="https://youtu.be/rf0sWDFnIzI"><i>🎁</i> Regalo 1</button>
+      <button class="btn-regalo" data-video="https://youtu.be/kxyVXHuUp8Q"><i>🎁</i> Regalo 2</button>
+      <button class="btn-regalo" data-video="https://youtu.be/MeYp-CaT9fA"><i>🎁</i> Regalo 3</button>
+    </div>
+    <p style="margin-top: 0.8rem; color: #936b73; font-size: 1rem;">✨ Haz clic para ver tu sorpresa especial ✨</p>
+  </div>
+
+  <!-- 9. 🎬 SECCIÓN DE VIDEOS DEDICADOS (15 BOTONES) -->
+  <section id="videos-dedicados" style="margin-top: 2rem;">
+    <h2 style="border-left: none; text-align: center; border-bottom: 4px solid var(--rosa-medio); display: inline-block; padding-bottom: 0.5rem; padding-left: 0; margin-bottom: 2rem;">🎬 Videos que te dedico my prometido Eiden</h2>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; max-width: 1000px; margin: 0 auto;">
+      <button class="btn-video-dedicatoria" data-video="https://youtube.com/shorts/NzYy-YWHE_w?feature=share
+">🎥 Video 1</button>
+      <button class="btn-video-dedicatoria" data-video="https://youtube.com/shorts/8EFpgft0blU?feature=share">🎥 Video 2</button>
+      <button class="btn-video-dedicatoria" data-video="https://youtube.com/shorts/7e2f7QykfFM">🎥 Video 3</button>
+      <button class="btn-video-dedicatoria" data-video="https://youtube.com/shorts/0TDFf7HUpyY?feature=share">🎥 Video 4</button>
+      <button class="btn-video-dedicatoria" data-video="https://youtube.com/shorts/QO97eiSsxEg">🎥 Video 5</button>
+      <button class="btn-video-dedicatoria" data-video="https://youtube.com/shorts/1Er7rmIOBw0">🎥 Video 6</button>
+      <button class="btn-video-dedicatoria" data-video="https://youtube.com/shorts/lo6KOlAyarw">🎥 Video 7</button>
+      <button class="btn-video-dedicatoria" data-video="https://youtu.be/2tS8Ly0MSkk">🎥 Video 8</button>
+      <button class="btn-video-dedicatoria" data-video="https://youtube.com/shorts/P3jggSxRvQE">🎥 Video 9</button>
+      <button class="btn-video-dedicatoria" data-video="https://youtube.com/shorts/m9jNC-ldxbY">🎥 Video 10</button>
+      <button class="btn-video-dedicatoria" data-video="https://youtube.com/shorts/lLLlPFG5MZQ">🎥 Video 11</button>
+      <button class="btn-video-dedicatoria" data-video="https://youtube.com/shorts/ik49KKsRof4">🎥 Video 12</button>
+      <button class="btn-video-dedicatoria" data-video="https://youtu.be/zUWzpQng_QU">🎥 Video 13</button>
+      <button class="btn-video-dedicatoria" data-video="https://youtube.com/shorts/IxhPvMYIwY0">🎥 Video 14</button>
+      <button class="btn-video-dedicatoria" data-video="https://youtu.be/cjdGlEMZsrY">🎥 Video 15</button>
+    </div>
+    
+    <p style="text-align: center; margin-top: 1.2rem; color: #936b73; font-style: italic;">✨ Cada video es un pedacito de lo que siento por ti, bueno mas bien diria que lo que siento por ti es infinito miamorr✨</p>
+  </section>
+  
+  <div class="footer-note">— Hecho con todo el cariño para my Eidencita hermosa —</div>
+</main>
+
+<!-- LIGHTBOX MODAL -->
+<div class="lightbox" id="lightbox">
+  <span class="close-lightbox" id="closeLightbox">&times;</span>
+  <div class="lightbox-content" id="lightboxContent">
+    <img src="" alt="imagen ampliada" id="lightboxImg">
+  </div>
+</div>
+
+<script>
+  (function() {
+    "use strict";
+
+    const galeriaImgs = [
+      'https://i.pinimg.com/736x/6e/f2/3d/6ef23d5ac4322fadf3d841bc0d809600.jpg',
+      'https://i.pinimg.com/736x/41/c8/c7/41c8c75ddeb1e744258992c4bcbe5fe4.jpg',
+      'https://i.pinimg.com/736x/52/fe/6f/52fe6f76aee252e2c4245b55ed0826c0.jpg',
+      'https://i.pinimg.com/736x/79/07/14/790714501a0d99a46254ce29a6604555.jpg',
+      'https://i.pinimg.com/736x/33/41/d8/3341d8df8b0f408dbcdc8053cac0c941.jpg',
+      'https://i.pinimg.com/736x/0c/8a/59/0c8a59a690cddc48a518eecbd170918b.jpg',
+      'https://i.pinimg.com/736x/c8/a5/49/c8a5499f8464235139dcb4c09ef8e8a3.jpg',
+      'https://i.pinimg.com/736x/58/28/cb/5828cbb89188b561d8f12f695ae11ecd.jpg',
+      'https://i.pinimg.com/736x/b8/c8/1f/b8c81f01847bb182536dd61c99298b3c.jpg',
+      'https://i.pinimg.com/736x/e6/59/bf/e659bfd60c38230e5d2f7d135426f438.jpg',
+      'https://i.pinimg.com/736x/c2/c3/ee/c2c3eed2e891d3d65b6486135b5f15e5.jpg',
+      'https://i.pinimg.com/736x/c0/e8/e7/c0e8e7582128ae39f9ac877253bab3b6.jpg',
+      'https://i.pinimg.com/736x/ec/38/24/ec38241e05bc90697e2513bdb016d6c4.jpg',
+      'https://i.pinimg.com/736x/05/ca/2a/05ca2aa3241d575e619269a05eb2c95c.jpg',
+      'https://i.pinimg.com/736x/11/ba/76/11ba76291ab070bc0f7dabdae5808f73.jpg',
+      'https://i.pinimg.com/736x/47/91/6c/47916cf7a19bb945690fc4a90f5a0987.jpg'
+    ];
+
+    const juegosImgs = [
+      'https://i.pinimg.com/736x/98/94/14/9894149fdcbd64b536d3068d16b6996c.jpg',
+      'https://i.pinimg.com/736x/e5/51/2c/e5512ceba017b07775fe975befa63fdc.jpg',
+      'https://i.pinimg.com/736x/f0/c0/ea/f0c0eabc80e8d2a6605aa97c5525b93e.jpg',
+      'https://i.pinimg.com/736x/b5/a4/99/b5a499afe589b6a1f8080cbabf1e4f8a.jpg',
+      'https://i.pinimg.com/736x/8f/dc/d7/8fdcd701f08836830c3f14883be5f6a1.jpg',
+      'https://i.pinimg.com/736x/4d/87/8f/4d878f393426e302d9fb70b27d1737b7.jpg',
+      'https://i.pinimg.com/736x/96/dd/dc/96dddc902a9610b465ad2bd0c0e858c1.jpg',
+      'https://i.pinimg.com/736x/55/d3/3e/55d33ee001ed3b0f41395d1d6b010d84.jpg'
+    ];
+
+    const gatitosImgs = [
+      'https://i.pinimg.com/736x/f3/14/57/f31457a7c0f0349a772ae8d45a265cd2.jpg',
+      'https://i.pinimg.com/736x/da/1c/be/da1cbe01d5fe146dc138a0d33024e650.jpg',
+      'https://i.pinimg.com/736x/03/4f/49/034f49554ba993f36022743c5007f751.jpg',
+      'https://i.pinimg.com/736x/ea/aa/18/eaaa18d06a3e74f54b5b721bab58a89c.jpg',
+      'https://i.pinimg.com/736x/5d/b5/fe/5db5fef6d12664fd5ea7d3700f495897.jpg',
+      'https://i.pinimg.com/736x/83/87/fc/8387fc18b48673a9376fdab4c02a5cbe.jpg',
+      'https://i.pinimg.com/736x/41/c5/d6/41c5d6ef968272243ca9ba15ea1c1f3a.jpg',
+      'https://i.pinimg.com/1200x/4f/ef/cc/4fefccb1a2a7603a532d66182b85e5f0.jpg',
+      'https://i.pinimg.com/736x/57/51/ee/5751eef09dc3ae5c970d49f8bbc995c7.jpg',
+      'https://i.pinimg.com/736x/b3/0e/c1/b30ec1c91af53ec24fa07d8ce806cd55.jpg'
+    ];
+
+    function renderGallery(containerId, imagesArray) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+      container.innerHTML = '';
+      imagesArray.forEach(src => {
+        const div = document.createElement('div');
+        div.className = 'galeria-item';
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = 'recuerdo especial';
+        img.loading = 'lazy';
+        div.appendChild(img);
+        container.appendChild(div);
+      });
+    }
+
+    renderGallery('galeriaGrid', galeriaImgs);
+    renderGallery('juegosGrid', juegosImgs);
+    renderGallery('gatitosGrid', gatitosImgs);
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const closeBtn = document.getElementById('closeLightbox');
+
+    function openLightbox(imgSrc) {
+      lightboxImg.src = imgSrc;
+      lightbox.classList.add('active');
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+    }
+
+    document.body.addEventListener('click', (e) => {
+      const galeriaItem = e.target.closest('.galeria-item');
+      if (galeriaItem) {
+        const img = galeriaItem.querySelector('img');
+        if (img && img.src) {
+          openLightbox(img.src);
+        }
+      }
+    });
+
+    closeBtn.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        closeLightbox();
+      }
+    });
+
+    function scrollToSection(sectionId) {
+      const target = document.getElementById(sectionId);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    const btnEntrar = document.getElementById('btnEntrar');
+    btnEntrar.addEventListener('click', () => {
+      scrollToSection('galeria');
+    });
+
+    const menuButtons = document.querySelectorAll('.btn-menu');
+    menuButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-target');
+        if (targetId) scrollToSection(targetId);
+      });
+    });
+
+    const regaloButtons = document.querySelectorAll('.btn-regalo');
+    regaloButtons.forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    const videoUrl = this.getAttribute('data-video');
+    if (videoUrl && videoUrl !== '#') {
+      window.open(videoUrl, '_blank');
+    } else {
+      alert('🎬 ¡Este regalo pronto estará disponible! Vuelve más tarde para ver tu video sorpresa. 🎁');
+    }
+  });
+});
+
+    const videoButtons = document.querySelectorAll('.btn-video-dedicatoria');
+    videoButtons.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const videoUrl = this.getAttribute('data-video');
+        if (videoUrl && videoUrl !== '#' && !videoUrl.includes('data-video')) {
+          window.open(videoUrl, '_blank');
+        } else {
+          alert('🎬 ¡Pronto podrás ver este video especial! Estoy preparando algo hermoso para ti, Eiden. 💕');
+        }
+      });
+    });
+
+    window.addEventListener('load', () => {
+      if (window.location.hash) {
+        const el = document.querySelector(window.location.hash);
+        if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 100);
+      }
+    });
+
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+        }
+      });
+    }, { threshold: 0.15 });
+    sections.forEach(s => observer.observe(s));
+
+  })();
+</script>
+
+<style>
+  .btn-hero, .btn-menu, .btn-regalo, .btn-video-dedicatoria { user-select: none; }
+  .galeria-item img { transition: transform 0.35s; }
+  #especial img { transition: transform 0.4s; }
+  #especial img:hover { transform: scale(1.02); }
+  .lightbox-content img { background: #fff0f0; }
+  @media (max-width: 480px) {
+    .hero-content { padding: 1.5rem; }
+  }
+</style>
+
+</body>
+</html>
